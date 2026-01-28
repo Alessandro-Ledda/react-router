@@ -39,7 +39,7 @@ function ListProducts() {
                 <div className="products-content">
                     {products.map((product) => (
                         <CardProduct
-                            key={id}
+                            key={product.id}
                             title={product.title}
                             image={product.image}
                             price={product.price}
