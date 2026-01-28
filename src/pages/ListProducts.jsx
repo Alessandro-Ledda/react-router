@@ -3,6 +3,9 @@ import axios from "axios"
 // import var di stato per controllo sui prodotti
 import { useEffect, useState } from "react"
 
+// import del componente del singolo prodotto
+import CardProduct from "../components/CardProduct";
+
 // creazione variabile per api di ref
 const endPoint = "https://fakestoreapi.com/products"
 
@@ -34,7 +37,17 @@ function ListProducts() {
             <div className="wrap-products">
                 <h1>Lista Prodotti</h1>
                 <div className="products-content">
-                    {/* creazione card  */}
+                    {products.map((product) => (
+                        <CardProduct
+                            key={id}
+                            title={product.title}
+                            image={product.image}
+                            price={product.price}
+                            category={product.category}
+                            description={product.description}
+                        />
+                    ))}
+
                 </div>
             </div>
         </section>
