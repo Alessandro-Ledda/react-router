@@ -5,10 +5,10 @@ function CardProduct(props) {
 
     return (
         <div className="card">
-            <h1 className="title">{title}</h1>
+            <h3 className="title">{title}</h3>
             <img src={image} alt="" />
-            <h3 className="price">{price}</h3>
-            <h3 className="category">{category}</h3>
+            <h4 className="price">{price}</h4>
+            <h4 className="category">{category}</h4>
             <p className="description">{description}</p>
         </div>
     )

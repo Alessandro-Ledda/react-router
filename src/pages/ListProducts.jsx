@@ -35,7 +35,7 @@ function ListProducts() {
     return (
         <section className="container">
             <div className="wrap-products">
-                <h1>Lista Prodotti</h1>
+                <h2>Lista Prodotti</h2>
                 <div className="products-content">
                     {products.map((product) => (
                         <CardProduct
