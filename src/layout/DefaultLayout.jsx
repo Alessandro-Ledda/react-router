@@ -2,7 +2,9 @@ import { Outlet } from "react-router-dom";
 
 function DefaultLayout() {
 
-    return ()
+    return (
+        <h1>ciao</h1>
+    )
 }
 
 export default DefaultLayout
