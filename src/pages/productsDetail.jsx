@@ -44,3 +44,5 @@ function productsDetail() {
         </section>
     )
 }
+
+export default productsDetail
