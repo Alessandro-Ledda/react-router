@@ -10,7 +10,10 @@ import { useParams, useNavigate } from "react-router-dom";
 // enpoint di riferimento
 const endPointBase = "https://fakestoreapi.com/products/:id"
 
-function productsDetail() {
+// import detail card di ref
+import ProductDetailCard from "../components/ProductDetailCard";
+
+function ProductsDetail() {
 
     // inizializzazione variabile di stato
     const [detail, setDetail] = useState()
@@ -39,10 +42,16 @@ function productsDetail() {
         <section className="container-product-detail">
             <div className="wrap-detail">
                 <h2>Dettagli prodotto</h2>
-                {/* products detail card */}
+                {detail ? (
+                    <ProductDetailCard infoProd={product} />
+                ) : (
+                    <p className="loader">Please Wait....</p>
+                )
+                }
+
             </div>
         </section>
     )
 }
 
-export default productsDetail
+export default ProductsDetail
