@@ -45,6 +45,8 @@ function ListProducts() {
                             price={product.price}
                             category={product.category}
                             description={product.description}
+                            // aggingo id per prop dinamica 
+                            id={product.id}
                         />
                     ))}
 

@@ -8,49 +8,55 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 // enpoint di riferimento
-const endPointBase = "https://fakestoreapi.com/products/:id"
+const endPoint = "https://fakestoreapi.com/products/"
 
 // import detail card di ref
 import ProductDetailCard from "../components/ProductDetailCard";
 
 function ProductsDetail() {
 
-    // inizializzazione variabile di stato
-    const [detail, setDetail] = useState()
-
     // inizializzo var per recupero parametro dinamico
     const { id } = useParams();
+
+    // inizializzazione variabile di stato
+    const [detail, setDetail] = useState()
 
     // setto variabile per la chiamata 
     function fetchDetails() {
 
-        axios.get(endPointBase + id)
+        axios.get(endPoint + id)
 
             .then((response) => {
                 setDetail(response.data)
             })
-            .catch(console.error("request not found"))
+            .catch(err => {
+                console.error("request not found", err)
+            })
+
             .finally()
     }
 
     // determinare  momento di evocazione della funzione chiamata
     useEffect(() => {
         fetchDetails()
-    }, [])
+    }, [id])
+
 
     return (
-        <section className="container-product-detail">
-            <div className="wrap-detail">
-                <h2>Dettagli prodotto</h2>
-                {detail ? (
-                    <ProductDetailCard infoProd={product} />
-                ) : (
-                    <p className="loader">Please Wait....</p>
-                )
-                }
+        <>
+            <section className="container-product-detail">
+                <div className="wrap-detail">
+                    <h2>Dettagli prodotto</h2>
+                    {detail ? (
+                        <ProductDetailCard infoProd={detail} />
+                    ) : (
+                        <p className="loader">Please Wait....</p>
+                    )
+                    }
 
-            </div>
-        </section>
+                </div>
+            </section>
+        </>
     )
 }
 
