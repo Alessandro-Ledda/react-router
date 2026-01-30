@@ -64,7 +64,31 @@ h2 {
     height: 300x;
 }
 
-img {
+.card img {
     width: 150px;
     height: auto;
+}
+
+/* product detail */
+
+.det-content {
+    width: 1200px;
+    margin: 50px auto;
+    display: flex;
+}
+
+.item {
+    margin-top: 70px;
+    margin-left: 70px;
+    line-height: 40px;
+    font-size: 17px;
+}
+
+.item a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: deepskyblue;
+    border-radius: 7px;
+    color: white;
+    margin-top: 30px;
 }
